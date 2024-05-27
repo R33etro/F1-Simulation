@@ -1,4 +1,4 @@
 import pygame
-class FORMULA_SIMULATION:
-    def createMenu():
-        return
+import Menu
+#tworzy menu ... zaczyna symulacje
+menu = Menu

@@ -1,6 +1,6 @@
-class RandomEvents:
-    rainChance: float
-    safetyCarChance: float
+# class RandomEvents:
+#     rainChance: float
+#     safetyCarChance: float
 
-    def __init__(self):
-        self #costam
+#     def __init__(self):
+#         self

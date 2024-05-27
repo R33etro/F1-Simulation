@@ -1,15 +1,19 @@
+import AuthorInfo
+import ProjectInfo
+import Race
+
 class Menu:
     def __init__(self):
         self
 
     def setStats(self):
-        self #nwm co sie tu wpisuje
+        return #nwm co sie tu wpisuje
 
     def setNumberOfLaps(self):
-        self
+        return
 
     def startRace(self):
-        self
+        return
 
     def showAuthorInfo():
         return

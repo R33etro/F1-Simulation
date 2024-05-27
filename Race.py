@@ -1,9 +1,14 @@
-class Race:
-    NumberOfLaps: int
-    Cars = []
+import Bolide
+import Track
+import TimeLost
 
-    def __init__(self):
-        self
+class Race:
+    # NumberOfLaps: int
+    # Cars = []
+
+    def __init__(self, numberOfLaps, Cars):
+        self.numberOfLaps = numberOfLaps
+        sels.Cars = Cars
 
     def playBackgroundMusic():
         return
