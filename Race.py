@@ -8,7 +8,7 @@ class Race:
 
     def __init__(self, numberOfLaps, Cars):
         self.numberOfLaps = numberOfLaps
-        sels.Cars = Cars
+        self.Cars = Cars
 
     def playBackgroundMusic():
         return
