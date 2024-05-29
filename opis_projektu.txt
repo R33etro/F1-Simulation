@@ -10,3 +10,4 @@ które będą wpływały na kolejność aut po każdym okrążeniu
 oraz straty czasowe podczas pitstopów. Liczba elementów losowych 
 oraz innych współczynników może ulec zmianie. Projekt przewiduje interfejs graficzny.
 
+ciekawe czy dobrze sie wrzuci
