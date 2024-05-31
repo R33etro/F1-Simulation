@@ -15,9 +15,9 @@ RandomEventsObject = RandomEvents(rainChance,safetyCarChance) #tworze obiekt że
 # przykładowe współczynniki na strate czasu przy pitstopie
 normalLost = 19.1
 rainLost = 18.5
-scLost = 14.2
-PitstopTimeLostObject = PitstopTimeLost(normalLost, rainLost, scLost)
+safetyCarLost = 14.2
+PitstopTimeLostObject = PitstopTimeLost(normalLost, rainLost, safetyCarLost)
 
 #global
 isRain = RandomEventsObject.isRain()
-isSC = RandomEventsObject.isSC(isRain)
+isSafetyCar = RandomEventsObject.isSafetyCar(isRain)
