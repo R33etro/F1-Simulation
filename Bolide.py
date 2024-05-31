@@ -1,4 +1,7 @@
+#irjgjodgi
+import pygame
 class Bolide:
+
     # speed: float
     # skill: float
     # strategy: float
