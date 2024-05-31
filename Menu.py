@@ -1,7 +1,7 @@
 import AuthorInfo
 import ProjectInfo
 import Race
-
+#działaj pls
 class Menu:
     def __init__(self):
         self
