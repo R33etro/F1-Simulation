@@ -10,4 +10,3 @@ class Bolide:
         self.speed = speed
         self.skill = skill
         self.strategy = strategy
-

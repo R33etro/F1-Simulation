@@ -1,7 +1,7 @@
 import AuthorInfo
 import ProjectInfo
 import Race
-
+#działaj pls
 class Menu:
     def __init__(self):
         self
@@ -20,7 +20,7 @@ class Menu:
 
     def startRace():
         # jakos tak
-        newRace = Race
+        newRace = Race(15, 8, 1)
 
     def showAuthorInfo():
         return
