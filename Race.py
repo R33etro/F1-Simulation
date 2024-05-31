@@ -1,5 +1,5 @@
 import Bolide
-import TimeLostPitstop
+import PitstopTimeLost
 import RandomEvents
 
 class Race:
