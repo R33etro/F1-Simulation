@@ -16,13 +16,13 @@ class Race:
     #     # czy nie lepiej liste aut z czasem rzeczywistym - zdjęcie w sms
     #     return
 
-    def setTrack():
-        if(track == 1):
-            ptl = PitstopTimeLost(19.1, 18.5, 14.2)
-            re = RandomEvents(0.39, 0.56)
-        else:
-            ptl = PitstopTimeLost(18.7, 17.9, 15.3)
-            re = RandomEvents(0.45, 0.61)
+    def setTrack(self, track):
+        if(track == 1): #SPA
+            RE = RandomEvents.RandomEvents(0.64, 0.49)
+            PsTL = PitstopTimeLost.PitstopTimeLost(19.1, 18.5, 14.2, RE)
+        else: #RedBullRing
+            RE = RandomEvents.RandomEvents(0.35, 0.21)
+            PsTL = PitstopTimeLost.PitstopTimeLost(17.7, 16.9, 15.3, RE)
 
     def getBolideStats():
         return
@@ -30,7 +30,8 @@ class Race:
     def getPitstopTimeLost():
         return 
 
-    def raceCalculations():
+    def raceCalculations(self, PsTL, RE, numberOfLaps, numberOfCars):
+        
         # randomowe eventy występują i losują się na jedno okrążenie
         # deszcz odejmuje bolide.skill
         # safety car odejmuje bolide.strategy
