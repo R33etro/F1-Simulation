@@ -13,8 +13,8 @@ class Race:
         # drawTrack
 
     # def drawTrack():
-    #     # czy nie lepiej liste aut z czasem rzeczywistym - zdjęcie w sms
-    #     return
+    # czy nie lepiej liste aut z czasem rzeczywistym - zdjęcie w sms
+    # return
 
     def getBolideStats():
         return
