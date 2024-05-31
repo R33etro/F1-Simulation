@@ -1,6 +1,6 @@
 Projekt: Symulacja wyścigu formuły 1
 Język: Python
-Autorzy: Patrycja Bernard, Piotr Kulej-lider
+Autorzy: Patrycja Bernard, Piotr Kulej
 Opis: Symulacja przewiduje 8 samochodów oraz kilkanaście okrążeń. 
 Każdy samochód-kierowca ma pewny współczynnik szansy na wygraną zależną od 
 np. umiejętności kierowcy, szybkości auta, strategii zespołu. 
