@@ -10,11 +10,8 @@ class Race:
         self.numberOfLaps = numberOfLaps
         self.numberOfCars = numberOfCars   
         self.track = track  
-        # drawTrack
 
-    # def drawTrack():
-    # czy nie lepiej liste aut z czasem rzeczywistym - zdjęcie w sms
-    # return
+    # zamiast toru i kropek w kółko to zrobić liste która sie odświeża co sekunde
 
     def getBolideStats():
         return
