@@ -8,9 +8,13 @@ class RandomEvents:
 
     def isRain():
         probability = Randomizer.getRandomFactor(0.0, 1.0)
+        print({probability})
         if(probability < rainChance):
+            print('1')
             return True
     def isSC():
         probability = Randomizer.getRandomFactor(0.0, 1.0)
+        print(probability)
         if(probability < safetyCarChance):
+            print("1")
             return True

@@ -20,7 +20,7 @@ class Menu:
 
     def startRace():
         # jakos tak
-        newRace = Race
+        newRace = Race(15, 8, 1)
 
     def showAuthorInfo():
         return

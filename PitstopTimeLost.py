@@ -5,7 +5,7 @@ class TimeLostPitstop:
     # normalLost = 19.1
     # rainLost = 18.5
     # scLost = 14.2
-    def __init__(self, normalLost, rainLost, scLost, rainChance, safetyCarChance):
+    def __init__(self, normalLost, rainLost, scLost):
         self.normalLost = normalLost
         self.rainLost = rainLost
         self.scLost = scLost
@@ -19,4 +19,3 @@ class TimeLostPitstop:
             return scLost+Randomizer.getRandomFactor(-1.0, 2.0)
         else:
             return normalLost+Randomizer.getRandomFactor(-1.0, 2.0)  
-    
