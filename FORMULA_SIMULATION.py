@@ -22,7 +22,7 @@ PitstopTimeLostObject = PitstopTimeLost.TimeLostPitstop(normalLost, rainLost, sc
 
 #global
 isRain = RandomEventsObject.isRain()
-isSC = RandomEventsObject.isSC(isRain)
+isSC = RandomEventsObject.isSafetyCar(isRain)
 
 #Track
 screen_width = 800
