@@ -12,7 +12,7 @@ class RandomEvents:
             return True
         else:
             return False
-    def isSC(self, isRain):
+    def isSafetyCar(self, isRain):
         
         if isRain== True:
             probability = Randomizer.Randomizer.getRandomFactor(0.0, 0.7)

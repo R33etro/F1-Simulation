@@ -1,7 +1,7 @@
 import AuthorInfo
 import ProjectInfo
 import Race
-#działaj pls
+
 class Menu:
     def __init__(self):
         self
@@ -11,15 +11,13 @@ class Menu:
         # przyciski do: startu wyścigu, pokazanie info
         # start wyścigu - nowe okienko z działającą już symulacją
 
-    # def setStats(self):
-        # nwm jak wpisywac wartosci z okienka
-        # nowy pomysł - dwa tory do wyboru z menu ze stałymi wartościami prawdopodobieństwa deszczu i sc i strat pitsoptu 
+    
+    # nowy pomysł - dwa tory do wyboru z menu ze stałymi wartościami prawdopodobieństwa deszczu i sc i strat pitsoptu 
         
-    # def setNumberOfLaps(self):
-        # trzeba wpisac w okienku
+    # def setNumberOfLaps():
+    # def setCarsStats():
 
-    def startRace():
-        # jakos tak
+    def startRace(): #??
         newRace = Race(15, 8, 1)
 
     def showAuthorInfo():
