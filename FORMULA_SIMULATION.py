@@ -25,8 +25,8 @@ isRain = RandomEventsObject.isRain()
 isSC = RandomEventsObject.isSafetyCar(isRain)
 
 #Track
-screen_width = 800
-screen_height = 600
+screen_width = 900
+screen_height = 750
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 
