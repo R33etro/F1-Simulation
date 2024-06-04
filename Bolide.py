@@ -4,15 +4,15 @@ class Bolide:
     """Class representing the bolide
     Attributes:
     name: str
-    speed: int
-    skill: int
-    strategy: int
+    speed: float
+    skill: float
+    strategy: float
     colour: tuple
     screen
     x: int 
     y: int 
     position: Vector2
-    lap_time: int
+    lap_time: float
     velocity: Vector2
     bolideSurface
     

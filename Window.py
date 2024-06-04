@@ -6,7 +6,6 @@ from FORMULA_SIMULATION import screen_width, screen_height, screen, track_width,
 #initializing pygame
 pygame.init()
 
-
 clock = pygame.time.Clock()
 track = Track(screen_width, screen_height, screen, track_width, track_height, margin)
 

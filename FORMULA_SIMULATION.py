@@ -11,7 +11,7 @@ menu = Menu
 #doRandomEvents
 rainChance = 0.39
 safetyCarChance = 0.56
-RandomEventsObject = RandomEvents.RandomEvents(rainChance,safetyCarChance) #tworze obiekt żeby co jakis czas losoac deszcz jak bedzie for
+RandomEventsObject = RandomEvents.RandomEvents(rainChance,safetyCarChance) #tworzy obiekt żeby co jakis czas losowac
 
 #doPitstopTimeLost
 #example values

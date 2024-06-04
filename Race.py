@@ -5,13 +5,12 @@ import RandomEvents
 class Race:
     # NumberOfLaps = 15
     # Cars = [8]
+    # track = 1
 
     def __init__(self, numberOfLaps, numberOfCars, track):
         self.numberOfLaps = numberOfLaps
         self.numberOfCars = numberOfCars   
         self.track = track  
-
-    # zamiast toru i kropek w kółko to zrobić liste która sie odświeża co sekunde
 
     def getBolideStats():
         return
@@ -20,7 +19,7 @@ class Race:
         return 
 
     def raceCalculations(self, track, numberOfLaps, numberOfCars):
-        # żeby obiekty tworzyć tutaj a nie globalne bo sie tobiasz przyczepi
+        # czy nie lepiej obiekty random trzymać tutaj a nie global???
         if(track == 1): #SPA
             RandomEventsObject = RandomEvents.RandomEvents(0.64, 0.49)
             PitstopTimeLostObject = PitstopTimeLost.PitstopTimeLost(19.1, 18.5, 14.2)
@@ -31,7 +30,7 @@ class Race:
         # randomowe eventy występują i losują się na jedno okrążenie
         # deszcz odejmuje bolide.skill
         # safety car odejmuje bolide.strategy
-        # jeśli nie ma random eventów to każdy se jakoś jedzie
+        # jeśli nie ma random eventów to każdy jedzie zgodnie ze skillsami
         # jeśli są to odejmij staty i policz czas okrążenia
         # referencyjny czas jednego okrążenia i prawd. deszczu i SC 
         # dla np dwóch torów do wyboru z menu
