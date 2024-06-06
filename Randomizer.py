@@ -4,8 +4,8 @@ import random
 
 class Randomizer:
     @staticmethod
-    def getRandomFactor(lower_bound, upper_bound):
+    def getRandomFactor(lower_bound, upper_bound, precision):
         random_number = random.uniform(lower_bound, upper_bound)
-        return round(random_number, 2)
+        return round(random_number, precision)
 
-# print(Randomizer.getRandomFactor(0.0, 1.0))
+# print(Randomizer.getRandomFactor(-3.0, 3.0, 3))

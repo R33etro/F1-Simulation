@@ -9,11 +9,11 @@ class TimeLostPitstop:
 
     def getTimeLost(self, isRain, isSC):
         if (isRain & isSC):
-            return (self.rainLost/self.normalLost*self.scLost)+Randomizer.getRandomFactor(-1.0, 2.0)
+            return (self.rainLost/self.normalLost*self.scLost)+Randomizer.getRandomFactor(-1.0, 2.0, 2)
         elif (isRain):
-            return self.rainLost+Randomizer.getRandomFactor(-1.0, 2.0)
+            return self.rainLost+Randomizer.getRandomFactor(-1.0, 2.0, 2)
         elif (RandomEvents.isSC):
-            return self.scLost+Randomizer.getRandomFactor(-1.0, 2.0)
+            return self.scLost+Randomizer.getRandomFactor(-1.0, 2.0, 2)
         else:
-            return self.normalLost+Randomizer.getRandomFactor(-1.0, 2.0)  
+            return self.normalLost+Randomizer.getRandomFactor(-1.0, 2.0, 2)  
     
