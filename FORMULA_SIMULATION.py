@@ -5,6 +5,9 @@ import PitstopTimeLost
 import Track
 import Bolide
 
+#  CZY TA KLASA WGL JEST POTRZEBNA??
+
+
 #tworzy menu ... zaczyna symulacje jakos tak
 menu = Menu
 

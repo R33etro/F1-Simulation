@@ -4,7 +4,7 @@ import RandomEvents
 
 class Race:
     # NumberOfLaps = 15
-    # Cars = [8]
+    # Lista Cars = [8] # tutaj też kolejność najpierw na starcie potem po każdym okrążeniu 
     # track = 1
 
     def __init__(self, numberOfLaps, numberOfCars, track):
