@@ -1,19 +1,19 @@
 import Randomizer
 import RandomEvents
-class TimeLostPitstop:
+class PitstopTimeLost:
    
     def __init__(self, normalLost, rainLost, scLost):
         self.normalLost = normalLost
         self.rainLost = rainLost
         self.scLost = scLost
 
-    def getTimeLost(self, isRain, isSC):
-        if (isRain & isSC):
-            return (self.rainLost/self.normalLost*self.scLost)+Randomizer.getRandomFactor(-1.0, 2.0, 2)
+    def getPitstopTimeLost(self, isRain, isSafetyCar):
+        if (isRain & isSafetyCar):
+            return (self.rainLost/self.normalLost*self.scLost)+Randomizer.Randomizer.getRandomFactor(-1.0, 2.0, 2)
         elif (isRain):
-            return self.rainLost+Randomizer.getRandomFactor(-1.0, 2.0, 2)
-        elif (RandomEvents.isSC):
-            return self.scLost+Randomizer.getRandomFactor(-1.0, 2.0, 2)
+            return self.rainLost+Randomizer.Randomizer.getRandomFactor(-1.0, 2.0, 2)
+        elif (isSafetyCar):
+            return self.scLost+Randomizer.Randomizer.getRandomFactor(-1.0, 2.0, 2)
         else:
-            return self.normalLost+Randomizer.getRandomFactor(-1.0, 2.0, 2)  
+            return self.normalLost+Randomizer.Randomizer.getRandomFactor(-1.0, 2.0, 2)  
     
