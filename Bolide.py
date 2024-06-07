@@ -33,6 +33,7 @@ class Bolide:
         self.skill = skill
         self.strategy = strategy
         self.lap_time = 0
+        self.gap = 0
         # self.position = 0
         # self.position = pygame.math.Vector2(x, y)
         # self.velocity = pygame.math.Vector2(speed, 0)

@@ -13,10 +13,10 @@ class Race:
         self.numberOfLaps = numberOfLaps
         self.numberOfCars = numberOfCars
         self.track = track
-        self.cars = [Bolide.Bolide('Ver', 0.90, 0.91, 0.89),
-                     Bolide.Bolide('Nor', 0.87, 0.89, 0.95),
-                     Bolide.Bolide('Sai', 0.85, 0.80, 0.81),
-                     Bolide.Bolide('Kub', 0.99, 0.99, 0.99)]
+        self.cars = [Bolide.Bolide('Ver', 0.90, 0.90, 0.90),
+                     Bolide.Bolide('Nor', 0.90, 0.90, 0.90),
+                     Bolide.Bolide('Sai', 0.90, 0.90, 0.90),
+                     Bolide.Bolide('Kub', 0.90, 0.90, 0.90)]
 
     def raceCalculations(self):
         if(self.track == 1): #SPA
@@ -40,10 +40,10 @@ class Race:
                 if(currentLap == 0):
                     #każdemu kierowcy przypisz na start +0.1 od poprzednika z racji różnicy odległości pól startowych
                     self.cars[car].lap_time += 0.1*car
-                    print('roznica na starcie ',self.cars[car].name,' ', self.cars[car].lap_time,'\n')
+                    # print('roznica na starcie ',self.cars[car].name,' ', self.cars[car].lap_time,'\n')
 
 
-                if(currentLap == int(self.numberOfLaps/3) | currentLap == int(self.numberOfLaps*2/3)):
+                if(currentLap == int(self.numberOfLaps/3) or currentLap == int(self.numberOfLaps*2/3)):
                     #każdemu kierowcy przypisz pitstop_time_lost do bolide.lap_time
                     self.cars[car].lap_time += PitstopTimeLostObject.getPitstopTimeLost(isRain, isSafetyCar)
                     print('pitstop\n')
@@ -78,10 +78,10 @@ class Race:
         
             # wpisz listę kierowców od najlepszego czasu - koniec
             self.cars.sort(key=lambda x:x.lap_time)
-            print(self.cars[0].name,' ', round(self.cars[0].lap_time - referenceTime*currentLap, 3))
-            print(self.cars[1].name,' ', round(self.cars[1].lap_time - referenceTime*currentLap, 3))
-            print(self.cars[2].name,' ', round(self.cars[2].lap_time - referenceTime*currentLap, 3))
-            print(self.cars[3].name,' ', round(self.cars[3].lap_time - referenceTime*currentLap, 3))
+            for car in range (0, self.numberOfCars):
+                print(self.cars[car].name,' ', round(self.cars[car].lap_time, 3))
+                self.cars[car].lap_time = 0
+            
 
 
     def printTableEndOfRace(): #lista aut jest w klasie więc tutaj możemy robić jakąś ładną tabelke
