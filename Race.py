@@ -51,7 +51,7 @@ class Race:
                 if(currentLap == int(self.numberOfLaps*4/5)):
                     if(Randomizer.Randomizer.getRandomFactor(0.0, 1.0, 2) > self.cars[car].strategy):
                         #jeśli wylosował - kierowcy przypisz do bolide.lap_time
-                        print('dodatkowy pitstop\n')
+                        print('dodatkowy pitstop', self.cars[car].name ,'\n')
                         self.cars[car].lap_time += PitstopTimeLostObject.getPitstopTimeLost(isRain, isSafetyCar)
 
                 if(isSafetyCar): # safety car dodaje do bolide.laptime +12 sekund 
@@ -72,13 +72,17 @@ class Race:
                 self.cars[car].lap_time += (referenceTime + random_race_lost)
 
                 # koniec pętli przypisującej lap_time
-                self.cars.sort(key=lambda x:x.lap_time)
-                print(self.cars[car].name,' ', round(self.cars[car].lap_time, 3))
+                # self.cars.sort(key=lambda x:x.lap_time)
+                # print(self.cars[car].name,' ', round(self.cars[car].lap_time, 3)-referenceTime*currentLap)
                 
         
             # wpisz listę kierowców od najlepszego czasu - koniec
-            # print(self.cars)
-       
+            self.cars.sort(key=lambda x:x.lap_time)
+            print(self.cars[0].name,' ', round(self.cars[0].lap_time - referenceTime*currentLap, 3))
+            print(self.cars[1].name,' ', round(self.cars[1].lap_time - referenceTime*currentLap, 3))
+            print(self.cars[2].name,' ', round(self.cars[2].lap_time - referenceTime*currentLap, 3))
+            print(self.cars[3].name,' ', round(self.cars[3].lap_time - referenceTime*currentLap, 3))
+
 
     def printTableEndOfRace(): #lista aut jest w klasie więc tutaj możemy robić jakąś ładną tabelke
         return                  
