@@ -13,9 +13,9 @@ class Race:
         self.numberOfLaps = numberOfLaps
         self.numberOfCars = numberOfCars
         self.track = track
-        self.cars = [Bolide.Bolide('Ver', 0.90, 0.90, 0.90),
-                     Bolide.Bolide('Nor', 0.90, 0.90, 0.90),
-                     Bolide.Bolide('Sai', 0.90, 0.90, 0.90),
+        self.cars = [Bolide.Bolide('Ver', 0.95, 0.92, 0.89),
+                     Bolide.Bolide('Nor', 0.92, 0.90, 0.91),
+                     Bolide.Bolide('Sai', 0.90, 0.90, 0.88),
                      Bolide.Bolide('Kub', 0.90, 0.90, 0.90)]
 
     def raceCalculations(self):
@@ -46,12 +46,12 @@ class Race:
                 if(currentLap == int(self.numberOfLaps/3) or currentLap == int(self.numberOfLaps*2/3)):
                     #każdemu kierowcy przypisz pitstop_time_lost do bolide.lap_time
                     self.cars[car].lap_time += PitstopTimeLostObject.getPitstopTimeLost(isRain, isSafetyCar)
-                    print('pitstop\n')
+                    # print('pitstop')
 
                 if(currentLap == int(self.numberOfLaps*4/5)):
                     if(Randomizer.Randomizer.getRandomFactor(0.0, 1.0, 2) > self.cars[car].strategy):
                         #jeśli wylosował - kierowcy przypisz do bolide.lap_time
-                        print('dodatkowy pitstop', self.cars[car].name ,'\n')
+                        print(self.cars[car].name , 'dodatkowy pitstop\n')
                         self.cars[car].lap_time += PitstopTimeLostObject.getPitstopTimeLost(isRain, isSafetyCar)
 
                 if(isSafetyCar): # safety car dodaje do bolide.laptime +12 sekund 
@@ -72,14 +72,24 @@ class Race:
                 self.cars[car].lap_time += (referenceTime + random_race_lost)
 
                 # koniec pętli przypisującej lap_time
+
                 # self.cars.sort(key=lambda x:x.lap_time)
                 # print(self.cars[car].name,' ', round(self.cars[car].lap_time, 3)-referenceTime*currentLap)
-                
         
-            # wpisz listę kierowców od najlepszego czasu - koniec
-            self.cars.sort(key=lambda x:x.lap_time)
+            # wpisz listę kierowców od najlepszego czasu i czasy okrążenia- koniec
+            self.cars.sort(key=lambda x:x.lap_time+x.gap)
+
+            self.cars[0].gap = 0
+            self.cars[1].gap += (self.cars[1].lap_time - self.cars[0].lap_time)
+            self.cars[2].gap += (self.cars[2].lap_time - self.cars[1].lap_time)
+            self.cars[3].gap += (self.cars[3].lap_time - self.cars[2].lap_time)
+
             for car in range (0, self.numberOfCars):
-                print(self.cars[car].name,' ', round(self.cars[car].lap_time, 3))
+                if(currentLap == int(self.numberOfLaps/3) or currentLap == int(self.numberOfLaps*2/3)):
+                    print(self.cars[car].name,' ', round(self.cars[car].lap_time, 3), ' ', round(self.cars[car].gap, 3), ' pitstop')
+                else:
+                    print(self.cars[car].name,' ', round(self.cars[car].lap_time, 3), ' ', round(self.cars[car].gap, 3))
+
                 self.cars[car].lap_time = 0
             
 
