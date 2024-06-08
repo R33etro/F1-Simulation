@@ -98,10 +98,7 @@ class Race:
         return                  
 
     def playBackgroundMusic():
-        return
-
-    def playRainSound():
-        return        
+        return    
 
 race = Race(10,4,2)
 race.raceCalculations()

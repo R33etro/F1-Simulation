@@ -6,7 +6,7 @@ import Track
 import Bolide
 
 #  CZY TA KLASA WGL JEST POTRZEBNA??
-
+# wg mnie do wyyebania
 
 #tworzy menu ... zaczyna symulacje jakos tak
 # menu = Menu

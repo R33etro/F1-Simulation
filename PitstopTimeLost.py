@@ -11,9 +11,9 @@ class PitstopTimeLost:
         if (isRain & isSafetyCar):
             return (self.rainLost/self.normalLost*self.scLost)+Randomizer.Randomizer.getRandomFactor(0.0, 4.0, 2)
         elif (isRain):
-            return self.rainLost+Randomizer.Randomizer.getRandomFactor(0.0, 3.0, 2)
+            return self.rainLost+Randomizer.Randomizer.getRandomFactor(0.0, 3.5, 2)
         elif (isSafetyCar):
-            return self.scLost+Randomizer.Randomizer.getRandomFactor(0.0, 3.0, 2)
+            return self.scLost+Randomizer.Randomizer.getRandomFactor(0.0, 2.5, 2)
         else:
             return self.normalLost+Randomizer.Randomizer.getRandomFactor(0.0, 2.0, 2)  
     

@@ -7,22 +7,9 @@ class Bolide:
     speed: float
     skill: float
     strategy: float
-    colour: tuple
-    screen
-    x: int 
-    y: int 
-    position: Vector2
     lap_time: float
-    velocity: Vector2
-    bolideSurface
-    
-    Methods:
-    draw()
-    update()
+    gap: float
     """
-
-    bolide_width = 20  
-    bolide_height = 20
 
     def __init__(self, name, speed, skill, strategy):
         
