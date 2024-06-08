@@ -24,6 +24,12 @@ class Menu:
         self.root = root 
         self.create_menu()
 
+        # muzyka ma grac w menu i podczas następnych okrążeń ma być ten drugi dźwięk
+        #####MUSIC#####
+        pygame.mixer.init()
+        self.loading_screen_music = pygame.mixer.Sound("f1-music.mp3")
+        self.new_lap_sound = pygame.mixer.Sound("cars-passing.mp3") # to jeszcze musze przyciąć zeby było krótsze
+
     def create_menu(self):
         
         """ 
