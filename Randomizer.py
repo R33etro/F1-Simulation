@@ -3,9 +3,7 @@ import random
 #metoda statyczna
 
 class Randomizer:
-    @staticmethod
+    @staticmethod #nie potrzeba obiektu, żeby korzystać z metody
     def getRandomFactor(lower_bound, upper_bound, precision):
         random_number = random.uniform(lower_bound, upper_bound)
         return round(random_number, precision)
-
-# print(Randomizer.getRandomFactor(-3.0, 3.0, 3))

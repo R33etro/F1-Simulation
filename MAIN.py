@@ -1,12 +1,16 @@
 import tkinter as tk
-from Menu import Menu
-
+from tkinter import ttk
+import Race
+import RaceGUI
+import Menu
 
 if __name__ == "__main__":
-    """
-    Function main that runs the simulation. Creates the main men window of the simulation.
-    """
     root = tk.Tk()
-    root.title("Formula 1 Simulation")
-    menu = Menu(root)
+    race = Race.Race(10, 4, 2)
+    gui = RaceGUI.RaceGUI(root, race)
+    menuu = Menu.Menu(root)
+    race.raceCalculations(gui)
     root.mainloop()
+
+
+
