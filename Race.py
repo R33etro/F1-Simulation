@@ -56,6 +56,7 @@ class Race:
             self.cars[0].gap = 0
             for i in range(1, self.numberOfCars):
                 self.cars[i].gap += (self.cars[i].lap_time - self.cars[i-1].lap_time)
+                # print(cars.name[i], '\n')
 
             for car in self.cars:
                 car.lap_time = 0
