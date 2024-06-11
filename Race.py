@@ -60,3 +60,4 @@ class Race:
 
             for car in self.cars:
                 car.lap_time = 0
+        

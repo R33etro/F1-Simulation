@@ -24,14 +24,13 @@ class Menu:
         #####MUSIC#####
         pygame.mixer.init()
         self.loading_screen_music = pygame.mixer.Sound("f1-music.mp3")
-        self.new_lap_sound = pygame.mixer.Sound("cars-passing.mp3") # to jeszcze musze przyciąć zeby było krótsze
+        self.new_lap_sound = pygame.mixer.Sound("engine-noise.mp3") # to jeszcze musze przyciąć zeby było krótsze
 
     def create_menu(self):
         """ 
         Function that creates the main menu of the simulation.
         """
-        pygame.mixer.init()
-        self.loading_screen_music = pygame.mixer.Sound("f1-music.mp3")
+    
         self.root.configure(bg="#def0bb") #background color
 
         # Zmiana zarządcy geometrii na grid
@@ -55,7 +54,7 @@ class Menu:
         Function displaying the form for entering the drivers' data.
         """
         form_window = tk.Toplevel(self.root)
-        DriversForm(form_window)
+        drivers_form = DriversForm(form_window)
 
     def show_project_info(self):
         """
