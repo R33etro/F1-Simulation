@@ -22,6 +22,5 @@ class Bolide:
         self.skill = skill
         self.strategy = strategy
         self.lap_time = 0
-        self.progress = 0
         self.gap = 0
        

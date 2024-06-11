@@ -1,5 +1,4 @@
 import Randomizer
-import RandomEvents
 
 class PitstopTimeLost:
     """

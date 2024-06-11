@@ -45,7 +45,7 @@ class RandomEvents:
         if isRain== True:
             probability = Randomizer.Randomizer.getRandomFactor(0.0, 0.7, 2)
         else:
-            probability = Randomizer.Randomizer.getRandomFactor(0.0, 1.0, 2) 
+            probability = Randomizer.Randomizer.getRandomFactor(0.0, 0.99, 2) 
 
         if(probability < self.safetyCarChance):
             return True

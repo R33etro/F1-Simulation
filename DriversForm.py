@@ -33,7 +33,7 @@ class DriversForm:
             label = tk.Label(root, text=col, font=("Arial", 10, "bold"))
             label.grid(row=0, column=idx, padx=10, pady=5)
 
-        for i in range(2):
+        for i in range(4):
             row_entries = []
             for j in range(4):
                 entry = tk.Entry(root)
@@ -43,7 +43,7 @@ class DriversForm:
             self.entries.append(row_entries)
 
         # Track selection
-        track_label = tk.Label(root, text="Która wartość:", font=("Arial", 10, "bold"))
+        track_label = tk.Label(root, text="Który tor:", font=("Arial", 10, "bold"))
         track_label.grid(row=9, column=0, padx=10, pady=10)
         tk.Radiobutton(root, text="SPA", variable=self.track_var, value=1).grid(row=9, column=1, padx=5, pady=5)
         tk.Radiobutton(root, text="RedBullRing", variable=self.track_var, value=2).grid(row=9, column=2, padx=5, pady=5)
@@ -55,7 +55,7 @@ class DriversForm:
         laps_entry.grid(row=10, column=1, padx=5, pady=5)
 
         # Submit button
-        submit_button = tk.Button(root, text="Wyślij", command=self.submit)
+        submit_button = tk.Button(root, text="Rozpocznij wyścig", command=self.submit)
         submit_button.grid(row=11, column=0, columnspan=4, padx=10, pady=10)
         
 
@@ -68,7 +68,7 @@ class DriversForm:
 
         try:
             cars = []
-            for i in range(2):
+            for i in range(4):
                 name = self.entries[i][0].get()
                 speed = float(self.entries[i][1].get())
                 skill = float(self.entries[i][2].get())
