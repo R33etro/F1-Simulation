@@ -1,8 +1,12 @@
 import random
-#losuje liczbę typu float z zakresu
-#metoda statyczna
 
 class Randomizer:
+
+    """
+    Class representing the Randomizer.
+    Drawing random factors.
+    """
+
     @staticmethod #nie potrzeba obiektu, żeby korzystać z metody
     def getRandomFactor(lower_bound, upper_bound, precision):
         random_number = random.uniform(lower_bound, upper_bound)

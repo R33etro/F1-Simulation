@@ -1,10 +1,13 @@
 import tkinter as tk
-from tkinter import Tk
-import Race
-import RaceGUI
 import Menu
 
+
 if __name__ == "__main__":
+
+    """
+    Main function of the simulation, which creates the main window of the simulation.
+    """
+
     root = tk.Tk()
     root.title("Menu") 
     menuu = Menu.Menu(root)

@@ -8,6 +8,9 @@ from pygame import mixer
 # import RaceGUI
 
 class Race:
+    """
+    Class representing 
+    """
     def __init__(self, numberOfLaps, numberOfCars, track, cars):
         self.numberOfLaps = numberOfLaps
         self.numberOfCars = numberOfCars
@@ -71,6 +74,11 @@ class Race:
         self.show_table(laaap)
 
     def show_table(self, Lap):
+        
+        """
+        Function to show the table with the results of the simulation.
+        """
+
         root = tk.Tk()
         root.title(f"Race Results on lap: {Lap}")
 

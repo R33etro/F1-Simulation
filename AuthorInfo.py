@@ -13,12 +13,14 @@ class AuthorInfo:
         self.window.title("Infomacje o autorze")
         self.text = tk.Text(self.window, width=40, height=10)
         self.text.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
-        self.author_info = """ \n Bernard Kulej"""
+        self.author_info = """  \n
+                                Patrycja Bernard numer indeksu 276026\n
+                                Piotr Kulej numer indeksu 281085 - lider zespołu\n"""
         
         
     def get_author_info(self):
         
-        """ Method that displays information about the author."""
+        """ Function that displays information about the author."""
 
         self.text.configure(font=("Arial", 12), spacing1=8)
         self.text.insert(tk.END, self.author_info)

@@ -1,7 +1,6 @@
 from ProjectInfo import ProjectInfo
 from AuthorInfo import AuthorInfo
 import tkinter as tk
-# from tkinter import messagebox
 from pygame import mixer
 import DriversForm
 
@@ -28,13 +27,19 @@ class Menu:
          
 
     def create_menu(self):
+
         """ 
         Function that creates the main menu of the simulation.
+        Creates buttons that allow the user to choose between the drivers' form, information about the project, 
+        information about the authors start and exit the simulation.
+
         """
         self.root.configure(bg="#def0bb") #background color
 
         label_title = tk.Label(self.root, text="Main Menu", font=("Arial", 30, "bold"), bg="#def0bb")
         label_title.grid(row=0, column=0, columnspan=2, pady=20)
+
+        #buttons
 
         button_start = tk.Button(self.root, activebackground="green", width=20, text="Drivers Form", cursor="dotbox", relief="raised", font=("Arial", 16), bg="#baf051", fg="#000000", command=self.show_drivers_form)
         button_start.grid(row=1, column=0, padx=10, pady=10)
@@ -49,23 +54,28 @@ class Menu:
         button_exit.grid(row=4, column=0, padx=10, pady=10)
 
     def show_drivers_form(self):
+
         """
         Function displaying the form for entering the drivers' data.
         """
-        # mixer.music.pause()
+
         form_window = tk.Toplevel(self.root)
         drivers_form = DriversForm.DriversForm(form_window)   
 
     def show_project_info(self):
+
         """
         Function displaying information about the project.
         """
+
         project = ProjectInfo()
         project.get_project_info()
 
     def show_author_info(self):
+
         """
         Function displaying information about the authors.
         """
+        
         authors = AuthorInfo()
         authors.get_author_info()

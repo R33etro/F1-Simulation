@@ -4,8 +4,22 @@ import Race
 from tkinter import messagebox
 
 class DriversForm:
+    """
+    Class representing the form for entering the drivers' data.
+    Users can enter the name, speed, skill and strategy of the drivers.
+    
+    """
 
     def __init__(self, root):
+
+        """
+        Constructor of the DriversForm class.
+        
+        Args:
+        root : main window of the simulation
+
+        """
+
         self.root = root
         self.root.title("Race Configuration")
 
@@ -13,7 +27,7 @@ class DriversForm:
         self.track_var = tk.IntVar(value=1)
         self.laps_var = tk.IntVar(value=10)
 
-        # Etykiety kolumn
+        # Labels of the columns
         columns = ["Name", "Speed", "Skill", "Strategy"]
         for idx, col in enumerate(columns):
             label = tk.Label(root, text=col, font=("Arial", 10, "bold"))
@@ -46,6 +60,12 @@ class DriversForm:
         
 
     def submit(self):
+
+        """
+        Function that reads the data from the entries from user and creates the cars.
+        In case of incorrect data, the function displays an error message with Tk.messagebox.
+        """
+
         try:
             cars = []
             for i in range(2):

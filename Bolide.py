@@ -1,10 +1,21 @@
 
 
 class Bolide:
+    
+    """
+    Class that represents a bolide object
+    """
 
     def __init__(self, name, speed, skill, strategy):
         
-        """Initializes the bolide object"""
+        """Constructor of the Bolide's class.
+            Initializes the bolide object
+        Args:
+            name : name of the bolide
+            speed : speed of the bolide
+            skill : skill of the bolide
+            strategy : strategy of the bolide
+            speed, skill, strategy : float - values between 0 and 1; factors that determine the bolide's performance"""
         
         self.name = name
         self.speed = speed

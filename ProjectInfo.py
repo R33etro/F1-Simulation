@@ -4,6 +4,7 @@ class ProjectInfo:
 
     """
     Class representing the information about the project.
+    
     """
 
     def __init__(self):
@@ -16,7 +17,8 @@ class ProjectInfo:
         self.text = tk.Text(self.window, width=40, height=10)
         self.text.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
         
-        self.project_info = """Symulacja przewiduje 8 samochodów oraz kilka okrążeń. 
+        self.project_info = """
+                            Symulacja przewiduje 8 samochodów oraz kilka okrążeń. 
                             Każdy samochód-kierowca ma pewny współczynnik szansy na wygraną zależną od 
                             np. umiejętności kierowcy, szybkości auta, strategii zespołu. 
                             W trakcie symulacji będą elementy losowe np. deszcz, wyjazd samochodu bezpieczeństwa, 
