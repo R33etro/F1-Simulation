@@ -1,9 +1,9 @@
 from ProjectInfo import ProjectInfo
 from AuthorInfo import AuthorInfo
 import tkinter as tk
-from tkinter import messagebox
-import pygame
-from temp import DriversForm
+# from tkinter import messagebox
+from pygame import mixer
+import DriversForm
 
 class Menu:
     """
@@ -20,20 +20,19 @@ class Menu:
         self.root = root 
         self.create_menu()
 
-        # muzyka ma grac w menu i podczas następnych okrążeń ma być ten drugi dźwięk
         #####MUSIC#####
-        pygame.mixer.init()
-        self.loading_screen_music = pygame.mixer.Sound("f1-music.mp3")
-        self.new_lap_sound = pygame.mixer.Sound("engine-noise.mp3") # to jeszcze musze przyciąć zeby było krótsze
+        mixer.init()
+        mixer.music.load("f1-music.mp3")
+        mixer.music.play()
+        
+         
 
     def create_menu(self):
         """ 
         Function that creates the main menu of the simulation.
         """
-    
         self.root.configure(bg="#def0bb") #background color
 
-        # Zmiana zarządcy geometrii na grid
         label_title = tk.Label(self.root, text="Main Menu", font=("Arial", 30, "bold"), bg="#def0bb")
         label_title.grid(row=0, column=0, columnspan=2, pady=20)
 
@@ -53,8 +52,9 @@ class Menu:
         """
         Function displaying the form for entering the drivers' data.
         """
+        # mixer.music.pause()
         form_window = tk.Toplevel(self.root)
-        drivers_form = DriversForm(form_window)
+        drivers_form = DriversForm.DriversForm(form_window)   
 
     def show_project_info(self):
         """
@@ -69,4 +69,3 @@ class Menu:
         """
         authors = AuthorInfo()
         authors.get_author_info()
-

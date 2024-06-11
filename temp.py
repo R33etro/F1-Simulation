@@ -1,10 +1,22 @@
+# import tkinter as tk
+# from tkinter import messagebox
+# import Race
+# import Bolide
+# import RaceGUI
+
 import tkinter as tk
 from tkinter import messagebox
-import Race
-import Bolide
-import RaceGUI
 
-#kod do wrzucenia do menu
+# Definiowanie klasy Kierowca
+class Kierowca:
+    def __init__(self, name="", value1=0, value2=0, value3=0):
+        self.name = name
+        self.value1 = value1
+        self.value2 = value2
+        self.value3 = value3
+
+    def __repr__(self):
+        return f"Kierowca(name={self.name}, value1={self.value1}, value2={self.value2}, value3={self.value3})"
 
 # Funkcja wywoływana po kliknięciu przycisku
 def submit():
@@ -13,68 +25,63 @@ def submit():
         drivers[i].value1 = entries[i][1].get()
         drivers[i].value2 = entries[i][2].get()
         drivers[i].value3 = entries[i][3].get()
-
-    race = Race.Race(10, 4, 1, drivers)
-    # gui = RaceGUI.RaceGUI(root, race)
-    Race.Race.raceCalculations()
     
+    selected_value = bottom_option.get()
+    
+    # Przykład: Wyświetlanie danych kierowców
+    messagebox.showinfo("Informacja", f"Dane kierowców: {drivers}\nWybrana wartość: {selected_value}")
+
 # Tworzenie głównego okna
 root = tk.Tk()
 root.title("Formularz kierowców")
 
-class DriversForm:
-    def __init__(self, parent):
-        """
-        Constructor of the DriversForm class.
-        Args:
-            parent : main window of the simulation"""
-        
-        self.parent = parent
-        self.top = tk.Toplevel(parent) # okno nadrzędne
-        self.columns = ["Name", "Speed", "Skill", "Strategy"]
-        self.entries = []
-        self.drivers = [Bolide.Bolide for _ in range(8)] # lista kierowców
+# Etykiety kolumn
+columns = ["Imię", "Wartość 1", "Wartość 2", "Wartość 3"]
+for idx, col in enumerate(columns):
+    label = tk.Label(root, text=col, font=("Arial", 10, "bold"))
+    label.grid(row=0, column=idx, padx=10, pady=5)
 
-        self.create_form()
+entries = []
 
-    def create_form(self):
-        """
-        Function that creates the form for drivers' data input.
-        """
-        
-        for idx, col in enumerate(self.columns):
-            label = tk.Label(self.top, text=col, font=("Arial", 10, "bold"))
-            label.grid(row=0, column=idx, padx=10, pady=5)
+# Tworzenie listy kierowców
+drivers = [Kierowca() for _ in range(8)]
 
-        for i in range(8):
-            row_entries = []
-            # Imię
-            name_entry = tk.Entry(self.top)
-            name_entry.grid(row=i+1, column=0, padx=5, pady=5)
-            row_entries.append(name_entry)
-            
-            # Skill, Speed, Strategy
-            for j in range(1, 4):
-                value_entry = tk.Entry(self.top)
-                value_entry.grid(row=i+1, column=j, padx=5, pady=5)
-                row_entries.append(value_entry)
-            
-            self.entries.append(row_entries)
-
-        # Tworzenie i rozmieszczanie przycisku
-        submit_button = tk.Button(self.top, text="Sart race", command=submit)
-        submit_button.grid(row=9, column=0, columnspan=5, padx=10, pady=10)
+for i in range(8):
+    row_entries = []
+    # Imię
+    name_entry = tk.Entry(root)
+    name_entry.grid(row=i+1, column=0, padx=5, pady=5)
+    row_entries.append(name_entry)
     
-    def submit(self):
-        for i in range(8):
-            self.drivers[i] = Bolide.Bolide(
-                name = self.entries[i][0].get(),
-                speed = self.entries[i][1].get(),
-                skill = self.entries[i][2].get(),
-                strategy = self.entries[i][3].get()
-            )
+    # Trzy wartości liczbowe
+    for j in range(1, 4):
+        value_entry = tk.Entry(root)
+        value_entry.grid(row=i+1, column=j, padx=5, pady=5)
+        row_entries.append(value_entry)
+    
+    entries.append(row_entries)
 
-        race = Race.Race(10, 4, 1, self.drivers)
-        race.raceCalculations
-        self.top.destroy()
+# Etykieta dla pola wyboru na dole
+label_bottom_option = tk.Label(root, text="Która wartość:", font=("Arial", 10, "bold"))
+label_bottom_option.grid(row=9, column=0, padx=10, pady=10)
 
+# Tworzenie pola wyboru na dole
+bottom_option = tk.StringVar(value="1")
+bottom_option_menu = tk.OptionMenu(root, bottom_option, "1", "2")
+bottom_option_menu.grid(row=9, column=1, padx=10, pady=10)
+
+# Tworzenie i rozmieszczanie przycisku
+submit_button = tk.Button(root, text="Wyślij", command=submit)
+submit_button.grid(row=10, column=0, columnspan=4, padx=10, pady=10)
+
+# Uruchomienie pętli głównej
+root.mainloop()
+
+
+#     race = Race.Race(10, 4, 1, drivers)
+#     # gui = RaceGUI.RaceGUI(root, race)
+#     Race.Race.raceCalculations()
+    
+# # Tworzenie głównego okna
+# root = tk.Tk()
+# root.title("Formularz kierowców")
