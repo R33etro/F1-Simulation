@@ -4,6 +4,8 @@ import Randomizer
 import tkinter as tk
 import time
 from pygame import mixer
+import csv
+from tkinter import filedialog
 
 
 class Race:
@@ -66,7 +68,6 @@ class Race:
             for car in self.cars:
                 car.lap_time = 0
 
-            # self.show_table(currentLap)
         self.show_table(laaap)
 
     def show_table(self, Lap):
@@ -78,6 +79,7 @@ class Race:
         root = tk.Tk()
         root.title(f"Race Results on lap: {Lap}")
 
+        ###MUSIC###
         mixer.init()
         mixer.music.load("engine-noise.mp3")
         mixer.music.play()
@@ -95,10 +97,14 @@ class Race:
                 e.grid(row=i, column=j)
                 e.insert(tk.END, table[i][j])
 
+        # csv technology
+        write_button = tk.Button(root, width=20, text="Write results to csv file", cursor="dotbox", relief="raised", font=("Arial", 16), bg="#baf051", fg="#000000", command=self.write_csv_file(table))
+        write_button.grid(row=6, column=0, padx=10, pady=10)
 
-        # root.after(3000, )
-        # root.destroy
-        # root.mainloop()
+    def write_csv_file(self, table):
+      
+        with open("results.csv", 'a', newline='') as csv_file:
+            csv_writer = csv.writer(csv_file)
 
-
-    
+            for row in table:
+                csv_writer.writerow(row)
