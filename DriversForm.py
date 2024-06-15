@@ -37,7 +37,6 @@ class DriversForm:
             row_entries = []
             for j in range(4):
                 entry = tk.Entry(root)
-                # entry.insert(0,"0.9")
                 entry.grid(row=i+1, column=j, padx=5, pady=5)
                 row_entries.append(entry)
             self.entries.append(row_entries)

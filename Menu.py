@@ -3,6 +3,7 @@ from AuthorInfo import AuthorInfo
 import tkinter as tk
 from pygame import mixer
 import DriversForm
+import csvTechnologyDriversFormFile2
 
 class Menu:
     """
@@ -44,14 +45,17 @@ class Menu:
         button_start = tk.Button(self.root, activebackground="green", width=20, text="Drivers Form", cursor="dotbox", relief="raised", font=("Arial", 16), bg="#baf051", fg="#000000", command=self.show_drivers_form)
         button_start.grid(row=1, column=0, padx=10, pady=10)
 
+        button_csv = tk.Button(self.root, activebackground="green", width=20, text="Open csv file", cursor="dotbox", relief="raised", font=("Arial", 16), bg="#baf051", fg="#000000", command=self.load_csv_file)
+        button_csv.grid(row=2, column=0, padx=10, pady=10)
+
         button_rules = tk.Button(self.root, activebackground="green", width=20, text="Information about Project", cursor="dotbox", relief="raised", font=("Arial", 16), bg="#92c926", fg="#000000", command=self.show_project_info)
-        button_rules.grid(row=2, column=0, padx=10, pady=10)
+        button_rules.grid(row=3, column=0, padx=10, pady=10)
 
         button_author = tk.Button(self.root, activebackground="green", width=20, text="Information about authors", cursor="dotbox", relief="raised", font=("Arial", 16), bg="#74a80f", fg="#000000", command=self.show_author_info)
-        button_author.grid(row=3, column=0, padx=10, pady=10)
+        button_author.grid(row=4, column=0, padx=10, pady=10)
 
         button_exit = tk.Button(self.root, activebackground="green", width=20, text="Exit", cursor="dotbox", relief="raised", font=("Arial", 16), bg="#639109", fg="#000000", command=self.root.quit)
-        button_exit.grid(row=4, column=0, padx=10, pady=10)
+        button_exit.grid(row=5, column=0, padx=10, pady=10)
 
     def show_drivers_form(self):
 
@@ -60,7 +64,12 @@ class Menu:
         """
 
         form_window = tk.Toplevel(self.root)
-        drivers_form = DriversForm.DriversForm(form_window)   
+        drivers_form = DriversForm.DriversForm(form_window) 
+
+    def load_csv_file(self):
+
+        filled_form_window = tk.Toplevel(self.root)
+        csv_technology_file2 = csvTechnologyDriversFormFile2.csvTechnologyDriversFormFile2(filled_form_window)  
 
     def show_project_info(self):
 
