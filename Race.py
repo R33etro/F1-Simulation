@@ -13,10 +13,6 @@ class Race:
         self.numberOfCars = numberOfCars
         self.track = track
         self.cars = cars
-        # self.cars = [Bolide.Bolide('Ver', 0.95, 0.92, 0.89),
-        #              Bolide.Bolide('Nor', 0.92, 0.90, 0.91),
-        #              Bolide.Bolide('Sai', 0.90, 0.90, 0.88),
-        #              Bolide.Bolide('Kub', 0.90, 0.90, 0.90)]
 
     def raceCalculations(self):
         laaap = 0
@@ -65,13 +61,12 @@ class Race:
                 self.cars[i].gap += (self.cars[i].lap_time - self.cars[i-1].lap_time)
             self.cars[0].gap = 0
 
-
-            # self.show_table(currentLap)
             laaap += 1
 
             for car in self.cars:
                 car.lap_time = 0
 
+            # self.show_table(currentLap)
         self.show_table(laaap)
 
     def show_table(self, Lap):
@@ -100,7 +95,9 @@ class Race:
                 e.grid(row=i, column=j)
                 e.insert(tk.END, table[i][j])
 
-        # root.after(3000, root.destroy)
+
+        # root.after(3000, )
+        # root.destroy
         # root.mainloop()
 
 
