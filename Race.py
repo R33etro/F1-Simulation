@@ -9,14 +9,28 @@ from tkinter import filedialog
 
 
 class Race:
+
+    """
+    The Race class simulates a racing event based on provided parameters such as number of laps, number of cars, track type, and car details.
+
+    Args:
+    numberOfLaps: int, specifies the total number of laps for the race.
+    numberOfCars: int, represents the number of cars participating in the race.
+    track: int, indicates the type of track (1 for SPA, 2 for RedBullRing).
+    cars: List of Bolide objects, each representing a car with specific attributes (name, speed, skill, strategy)."""
     
     def __init__(self, numberOfLaps, numberOfCars, track, cars):
+        """"
+        Constructor od Race class. Initializes race parameters."""
         self.numberOfLaps = numberOfLaps
         self.numberOfCars = numberOfCars
         self.track = track
         self.cars = cars
 
     def raceCalculations(self):
+        """
+        Function that simulate the racing calculations for each lap of the race."""
+
         laaap = 0
 
         if self.track == 1:  # SPA
@@ -102,6 +116,10 @@ class Race:
         write_button.grid(row=6, column=0, padx=10, pady=10)
 
     def write_csv_file(self, table):
+        """
+        Function to write the results of the simulation to a csv file.
+        Args:
+            table : list - list of lists with the results of the simulation."""
       
         with open("results.csv", 'a', newline='') as csv_file:
             csv_writer = csv.writer(csv_file)
